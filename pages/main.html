@@ -6,30 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopting Animals</title>
     <link rel="stylesheet" href="../styles/main.css">
-    <script src="../scripts/main.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>JUST ADOPT! JUST DO IT</h1>
-        <h2>"Find your new best friend!"</h2>
-      </header>
-      <div class="content-area">
+      <div class="header-area">
+        <header>
+          <a href="#" onclick="$('#content').load('./components/home.html');">
+            <img src="../assets/dog & cat.jpg" alt="Logo">
+          </a>
+          <div class = "header-desc">
+            <h1>JUST ADOPT! JUST DO IT!</h1>
+            <h2>Find your new best friend!</h2>
+          </div>
+        </header>
         <nav>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#browse">Browse Available Pets</a></li>
-            <li><a href="#find">Find a dog/cat</a></li>
-            <li><a href="#dogCare">Dog Care</a></li>
-            <li><a href="#catCare">Cat Care</a></li>
-            <li><a href="#giveAway">Have a pet give away</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#" onclick="$('#content').load('./components/home.html');">Home</a></li>
+            <li><a href="#" onclick="$('#content').load('./components/browse.html');">Browse Available Pets</a></li>
+            <li><a href="#" onclick="$('#content').load('./components/find.html');">Find a dog/cat</a></li>
+            <li><a href="#" onclick="$('#content').load('./components/dogCare.html');">Dog Care</a></li>
+            <li><a href="#" onclick="$('#content').load('./components/catCare.html');">Cat Care</a></li>
+            <li><a href="#" onclick="$('#content').load('./components/giveAway.html');">Have a pet give away</a></li>
+            <li><a href="#" onclick="$('#content').load('./components/contact.html');">Contact Us</a></li>
           </ul>
         </nav>
-        <main id="content">
-          Loading...
-        </main>
       </div>
+      <main id="content">
+        Loading...
+      </main>
+      <script>
+        $(document).ready(function () {
+            $('#content').load('./components/home.html');
+        });
+      </script>
       <footer>
         &copy; JUST ADOPT! JUST DO IT, 2025
         <br/>

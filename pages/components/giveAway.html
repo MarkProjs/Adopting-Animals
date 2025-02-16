@@ -1,12 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>giveAway</title>
-</head>
-<body>
-    <h1>Have a pet give away</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>giveAway</title>
+    </head>
+    <body>
+        <h1>Bring your pet to us!</h1>
+        <p>Bring in your pet if you cannot take care of it anymore, 
+            other people will be happy to adopt it!
+        </p>
+        <form>
+            <fieldset>
+                <legend>Register your pet</legend>
+                <label for="dog">
+                    Is it a dog or a cat?
+                    <br/>
+                    <input type="radio" name="petType" value="Dog" id="dog"> Dog
+                </label>
+                <label for="cat">
+                    <input type="radio" name="petType" value="Cat" id="cat"> Cat
+                </label>
+                <br/><br/>
+                <label for="breed">
+                    The breed of pet you are looking for, if not sure, leave blank:
+                    <br/>
+                    <input type="text" name="breed" id="breed">
+                </label>
+                <br/><br/>
+                <label for="age">
+                    The age of the pet:
+                    <br/>
+                    <select name="age" id="age">
+                        <option value="">Select an option</option>
+                        <option value="Young">Young</option>
+                        <option value="Adult">Adult</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </label>
+                <br/><br/>
+                <label for="gender">
+                    The gender of your pet:
+                    <br/>
+                    <select name="gender" id="gender">
+                        <option value="">Select an option</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </label>
+                <br/><br/>
+                <label for="otherDogs">
+                    Does it get along with:
+                    <br/>
+                    <input type="checkbox" name="otherDogs" value="Other Dogs" id="otherDogs"> Other Dogs
+                </label>
+                <label for="otherCats">
+                    <input type="checkbox" name="otherCats" value="Other Cats" id="otherCats"> Other Cats
+                </label>
+                <label for="smallChildren">
+                    <input type="checkbox" name="smallChildren" value="Small Children" id="smallChildren"> Small Children
+                </label>
+                <br/><br/>
+                <label for="description">
+                    Describe your pet:
+                    <br/>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </label>
+                <br/><br/>
+                <label for="photo">
+                    Upload a photo of your pet:
+                    <br/>
+                    <input type="file" name="photo" id="photo">
+                </label>
+                <br/><br/>
+                <label for="currentOwner">
+                    Current Owner's name:
+                    <br/>
+                    <input type="text" name="currentOwner" id="currentOwner">
+                </label>
+                <br/><br/>
+                <label for="currentOwnerEmail">
+                    Current Owner's email:
+                    <br/>
+                    <input type="email" name="currentOwnerEmail" id="currentOwnerEmail">
+                </label>
+                <br/><br/>
+            </fieldset>
+            <button type="submit">Submit</button>
+            <button type="clear">Clear</button>
+        </form>
+    </body>
 </html>

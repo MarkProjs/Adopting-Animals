@@ -7,6 +7,62 @@
     <title>find</title>
 </head>
 <body>
-    <h1>Find a dog/cat</h1>
+    <h1>Find your new best friend (or pet)!</h1>
+    <form>
+        <fieldset>
+            <legend>Find a pet</legend>
+            <label for="dog">What type of pet are you looking for?
+            <br/>
+            <input type="radio" name="petType" value="Dog" id="dog"> Dog 
+            </label>
+            <label for="cat">
+                <input type="radio" name="petType" value="Cat" id="cat"> Cat
+            </label>
+            <br/><br/>
+            <label for="breed">
+                The breed of pet you are looking for, if not sure, leave blank:
+                <br/>
+                <input type="text" name="breed" id="breed">
+            </label>
+            <br/><br/>
+            <label for="age">
+                The age of pet you are looking for:
+                <br/>
+                <select name="age" id="age">
+                    <option value="">Select an option</option>
+                    <option value="Young">Young</option>
+                    <option value="Adult">Adult</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Any">Does not matter</option>
+                </select>
+            </label>
+            <br/><br/>
+            <label for="gender">
+                The gender of pet you are looking for:
+                <br/>
+                <select name="gender" id="gender">
+                    <option value="">Select an option</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Any">Does not matter</option>
+                </select>
+            </label>
+            <br/><br/>
+            <label for="otherDogs">
+                Check which does it need to get along with:
+                <br/>
+                <input type="checkbox" name="otherDogs" value="Other Dogs" id="otherDogs"> Other Dogs
+            </label>
+            <label for="otherCats">
+                <input type="checkbox" name="otherCats" value="Other Cats" id="otherCats"> Other Cats
+            </label>
+            <label for="smallChildren">
+                <input type="checkbox" name="smallChildren" value="Small Children" id="smallChildren"> Small Children
+            </label>
+            <br/><br/>
+        </fieldset>
+        <button type="submit">Submit</button>
+        <button type="clear">Clear</button>
+    </form>
 </body>
 </html>
