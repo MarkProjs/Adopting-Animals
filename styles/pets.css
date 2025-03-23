@@ -21,6 +21,11 @@
   list-style-type: none;
 }
 
+.pet-info ul {
+  display: flex;
+  flex-direction: column;
+}
+
 .pet-image {
   width: 100px;
   height: 100px;
