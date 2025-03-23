@@ -11,7 +11,7 @@
         <p>Bring in your pet if you cannot take care of it anymore, 
             other people will be happy to adopt it!
         </p>
-        <form>
+        <form id="giveAwayForm">
             <fieldset>
                 <legend>Register your pet</legend>
                 <label for="dog">
@@ -24,7 +24,7 @@
                 </label>
                 <br/><br/>
                 <label for="breed">
-                    The breed of pet you are looking for, if not sure, leave blank:
+                    The breed of pet you are looking for
                     <br/>
                     <input type="text" name="breed" id="breed" required>
                 </label>
@@ -83,12 +83,14 @@
                 <label for="currentOwnerEmail">
                     Current Owner's email:
                     <br/>
-                    <input type="email" name="currentOwnerEmail" id="currentOwnerEmail" required>
+                    <input type="email" name="currentOwnerEmail" id="currentOwnerEmail">
                 </label>
                 <br/><br/>
             </fieldset>
+            <p id="error-message" style="color: red; display: none"></p>
             <button type="submit">Submit</button>
             <button type="clear">Clear</button>
         </form>
+        <script src="../../scripts/giveAway.js"></script>
     </body>
 </html>
