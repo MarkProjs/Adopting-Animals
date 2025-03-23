@@ -1,4 +1,4 @@
-const petLists = [
+var petLists = [
   {
     image: "../../assets/goldenRetriever.jpg",
     type: "dog",
@@ -52,10 +52,12 @@ function addPet(e) {
       <p><strong>Owner Name:</strong> ${e.ownerName}</p>
       <p><strong>Owner Email:</strong> ${e.ownerEmail}</p>
     </div>
+    <button class="adopt-button" onclick="">Interested</button>
   `;
 
   petList.appendChild(pet);
 }
+
 
 function loadPets() {
   petLists.forEach(addPet);

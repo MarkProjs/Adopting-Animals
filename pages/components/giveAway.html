@@ -17,22 +17,22 @@
                 <label for="dog">
                     Is it a dog or a cat?
                     <br/>
-                    <input type="radio" name="petType" value="Dog" id="dog"> Dog
+                    <input type="radio" name="petType" value="Dog" id="dog" required> Dog
                 </label>
                 <label for="cat">
-                    <input type="radio" name="petType" value="Cat" id="cat"> Cat
+                    <input type="radio" name="petType" value="Cat" id="cat" required> Cat
                 </label>
                 <br/><br/>
                 <label for="breed">
                     The breed of pet you are looking for, if not sure, leave blank:
                     <br/>
-                    <input type="text" name="breed" id="breed">
+                    <input type="text" name="breed" id="breed" required>
                 </label>
                 <br/><br/>
                 <label for="age">
                     The age of the pet:
                     <br/>
-                    <select name="age" id="age">
+                    <select name="age" id="age" required>
                         <option value="">Select an option</option>
                         <option value="Young">Young</option>
                         <option value="Adult">Adult</option>
@@ -43,7 +43,7 @@
                 <label for="gender">
                     The gender of your pet:
                     <br/>
-                    <select name="gender" id="gender">
+                    <select name="gender" id="gender" required>
                         <option value="">Select an option</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -65,25 +65,25 @@
                 <label for="description">
                     Describe your pet:
                     <br/>
-                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="10" required></textarea>
                 </label>
                 <br/><br/>
                 <label for="photo">
                     Upload a photo of your pet:
                     <br/>
-                    <input type="file" name="photo" id="photo">
+                    <input type="file" name="photo" id="photo" required>
                 </label>
                 <br/><br/>
                 <label for="currentOwner">
                     Current Owner's name:
                     <br/>
-                    <input type="text" name="currentOwner" id="currentOwner">
+                    <input type="text" name="currentOwner" id="currentOwner" required>
                 </label>
                 <br/><br/>
                 <label for="currentOwnerEmail">
                     Current Owner's email:
                     <br/>
-                    <input type="email" name="currentOwnerEmail" id="currentOwnerEmail">
+                    <input type="email" name="currentOwnerEmail" id="currentOwnerEmail" required>
                 </label>
                 <br/><br/>
             </fieldset>
