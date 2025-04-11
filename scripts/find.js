@@ -58,9 +58,50 @@ function addPet(e) {
   petList.appendChild(pet);
 }
 
+function filterPets() {
+  let type = document.querySelector('input[name="petType"]:checked')?.value;
+  let breed = document.getElementById("breed").value.trim();
+  let age = document.getElementById("age").value;
+  let gender = document.getElementById("gender").value;
 
-function loadPets() {
-  petLists.forEach(addPet);
+  // get all checked values for "getAlong"
+  let getAlongCheckboxes = document.querySelectorAll('input[name="getAlong"]:checked');
+  let getAlongValues = Array.from(getAlongCheckboxes).map(cb => cb.value);
+
+  let filteredPets = petLists.filter((pet) => {
+    // check getAlong for all selected options
+    let matchesGetAlong = getAlongValues.every(val => {
+      if (val === "Other Dogs") return pet.getAlong.otherDogs === "Yes";
+      if (val === "Other Cats") return pet.getAlong.otherCats === "Yes";
+      if (val === "Small Children") return pet.getAlong.smallChildren === "Yes";
+      return false;
+    });
+
+    return (
+      pet.type.toLowerCase() === type.toLowerCase() &&
+      pet.breed.toLowerCase() === breed.toLowerCase() &&
+      pet.age === age &&
+      pet.gender === gender &&
+      matchesGetAlong
+    );
+  });
+
+  return filteredPets;
 }
 
-loadPets();
+function loadPets(arr) {
+  arr.forEach(addPet);
+}
+
+function showFilteredPets(e) {
+
+  let filteredPets = filterPets();
+  let petList = document.getElementById("petList");
+  petList.innerHTML = "";
+  filteredPets.forEach(addPet);
+}
+loadPets(petLists);
+document.querySelector("button[type='submit']").addEventListener("click", (e) => {
+e.preventDefault();
+showFilteredPets();
+});

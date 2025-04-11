@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>find</title>
+    <link rel="stylesheet" href="../../styles/pets.css">
 </head>
 <body>
     <h1>Find your new best friend (or pet)!</h1>
@@ -51,18 +52,22 @@
             <label for="otherDogs">
                 Check which does it need to get along with:
                 <br/>
-                <input type="checkbox" name="otherDogs" value="Other Dogs" id="otherDogs"> Other Dogs
+                <input type="checkbox" name="getAlong" value="Other Dogs" id="otherDogs"> Other Dogs
             </label>
             <label for="otherCats">
-                <input type="checkbox" name="otherCats" value="Other Cats" id="otherCats"> Other Cats
+                <input type="checkbox" name="getAlong" value="Other Cats" id="otherCats"> Other Cats
             </label>
             <label for="smallChildren">
-                <input type="checkbox" name="smallChildren" value="Small Children" id="smallChildren"> Small Children
+                <input type="checkbox" name="getAlong" value="Small Children" id="smallChildren"> Small Children
             </label>
             <br/><br/>
         </fieldset>
         <button type="submit">Submit</button>
         <button type="clear">Clear</button>
     </form>
+
+    <h3>Here is a list of available pets</h3>
+    <div id="petList"></div>
+    <script src="../../scripts/find.js"></script>
 </body>
 </html>
