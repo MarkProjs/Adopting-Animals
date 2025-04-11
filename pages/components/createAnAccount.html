@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>create An Account</title>
+        
+    </head>
+    <body>
+        <h1>Create an Account</h1>
+        <p>Fill in the form below to create an account</p>
+        <form action="/create-account" method="post">
+            <div id="username">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <p>&nbsp;Username must contain:</p>
+                <ul>
+                    <li><b>&nbsp;letters and numbers ONLY</b></li>
+                </ul>
+                <div id="usernameError"></div>
+            </div>
+            <br/>
+            <div id="password">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br/>
+                <p>&nbsp;Password must contain:</p>
+                <br/>
+                <ul>
+                    <li><b>&nbsp;at least 4 characters long</b></li>
+                    <li><b>&nbsp;at least 1 number</b>a</li>
+                    <li><b>&nbsp;at least 1 lowercase letter</b></li>
+                </ul>
+                <div id="passwordError"></div>
+            </div>
+            <br/>
+            <input type="submit" value="Create Account" id="createAccount">
+        </form>
+    </body>
+</html>

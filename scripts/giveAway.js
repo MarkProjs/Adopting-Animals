@@ -41,3 +41,64 @@ document.addEventListener("DOMContentLoaded", function () {
       errorMessage.style.display = "none"; // Hide error message on clear
   });
 });
+
+
+async function login() {
+  const username = document.getElementById("userName").value;
+  const password = document.getElementById("password").value;
+  const response = await fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  });
+  const data = await response.json();
+  if (data.success) {
+    document.getElementById("loginError").style.display = "none";
+    document.getElementById("login").style.display = "none";
+    document.getElementById("giveAway").style.display = "block";
+    sessionStorage.setItem("username", data.username);
+  } else {
+    document.getElementById("loginError").textContent = data.message;
+    document.getElementById("loginError").style.display = "block";
+    document.getElementById("giveAway").style.display = "none";
+  }
+}
+document.getElementById("login").addEventListener("submit", login);
+document.getElementById("giveAway").style.display = "none";
+
+async function giveAwaySubmit() {
+    const petType = document.querySelector('input[name="petType"]:checked').value;
+    const breed = document.getElementById("breed").value;
+    const age = document.querySelector('select[name="age"]').value;
+    const gender = document.querySelector('select[name="gender"]').value;
+    const getAlong = document.querySelectorAll('input[name="getAlong"]:checked').map(cb => cb.value);
+    const currentOwnerEmail = document.getElementById("currentOwnerEmail").value;
+    const description = document.getElementById("description").value;
+    const photo = document.getElementById("photo").files[0];
+    const currentOwner = document.getElementById("currentOwner").value;
+    const formData = new FormData();
+    formData.append("petType", petType);
+    formData.append("breed", breed);
+    formData.append("age", age);
+    formData.append("gender", gender);
+    formData.append("getAlong", JSON.stringify(getAlong));
+    formData.append("currentOwnerEmail", currentOwnerEmail);
+    formData.append("description", description);
+    formData.append("photo", photo);
+    formData.append("currentOwner", currentOwner);
+    const response = await fetch('/give-away', {
+        method: 'POST',
+        body: formData
+    });
+    const data = await response.json();
+    alert(data.message);
+}
+
+document.getElementById("giveAwaySubmit").addEventListener("submit", giveAwaySubmit);
+document.getElementById("logOut").addEventListener("click", () => {
+    sessionStorage.removeItem("username");
+    document.getElementById("login").style.display = "block";
+    document.getElementById("giveAway").style.display = "none";
+});
